@@ -141,6 +141,13 @@
             </property>
            </widget>
           </item>
+          <item>
+           <widget class="QCheckBox" name="remove_after_play_check">
+            <property name="text">
+             <string>A&amp;utomatic remove files from list after playing</string>
+            </property>
+           </widget>
+          </item>
          </layout>
         </widget>
        </item>

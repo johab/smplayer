@@ -240,6 +240,10 @@ void PrefPlaylist::createHelp() {
            "in the configuration file when SMPlayer is closed, and it will "
            "reloaded automatically when SMPlayer is run again."));
 
+	setWhatsThis(remove_after_play_check, tr("Automatic remove files from list after playing"),
+		tr("If this option is checked the title will be removed from the playlist "
+			"after playing. Note: The file itself remains and will not be deleted."));
+
 #ifdef PLAYLIST_DELETE_FROM_DISK
 	setWhatsThis(allow_delete_files_check, tr("Enable the option to delete files from disk"),
 		tr("This option allows you to enable the option to delete files from disk in the playlist's "
