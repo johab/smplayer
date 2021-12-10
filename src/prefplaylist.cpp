@@ -168,6 +168,14 @@ bool PrefPlaylist::filterCaseSensitive() {
 	return case_sensitive_search_check->isChecked();
 }
 
+void PrefPlaylist::setFileRemoveAfterPlay(bool b) {
+	remove_after_play_check->setChecked(b);
+}
+
+bool PrefPlaylist::fileRemoveAfterPlay() {
+	return remove_after_play_check->isChecked();
+}
+
 #ifdef PLAYLIST_DELETE_FROM_DISK
 void PrefPlaylist::allowDeleteFromDisk(bool b) {
 	allow_delete_files_check->setChecked(b);

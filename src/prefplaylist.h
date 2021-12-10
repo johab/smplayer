@@ -69,6 +69,9 @@ public:
 	void setFilterCaseSensitive(bool b);
 	bool filterCaseSensitive();
 
+	void setFileRemoveAfterPlay(bool b);
+	bool fileRemoveAfterPlay();
+
 #ifdef PLAYLIST_DELETE_FROM_DISK
 	void allowDeleteFromDisk(bool b);
 	bool isDeleteFromDiskAllowed();
