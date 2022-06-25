@@ -200,6 +200,7 @@ public:
 	// Preferences
 	void setDirectoryRecursion(bool b) { recursive_add_directory = b; };
 	void setAutoGetInfo(bool b) { automatically_get_info = b; };
+	void setRemoveAfterPlay(bool b) { remove_after_play = b; };
 	void setSavePlaylistOnExit(bool b) { save_playlist_in_config = b; };
 	void setPlayFilesFromStart(bool b) { play_files_from_start = b; };
 	void setIgnorePlayerErrors(bool b) { ignore_player_errors = b; };
@@ -211,6 +212,7 @@ public:
 
 	bool directoryRecursion() { return recursive_add_directory; };
 	bool autoGetInfo() { return automatically_get_info; };
+        bool removeAfterPlay() { return remove_after_play; };
 	bool savePlaylistOnExit() { return save_playlist_in_config; };
 	bool playFilesFromStart() { return play_files_from_start; };
 	bool ignorePlayerErrors() { return ignore_player_errors; };
@@ -411,6 +413,7 @@ private:
 	//Preferences
 	bool recursive_add_directory;
 	bool automatically_get_info;
+	bool remove_after_play;
 	bool save_playlist_in_config;
 	bool play_files_from_start;
 	int row_spacing;

@@ -282,6 +282,7 @@ Playlist::Playlist(QWidget * parent, Qt::WindowFlags f)
 	, modified(false)
 	, recursive_add_directory(false)
 	, automatically_get_info(false)
+        , remove_after_play(false)
 	, save_playlist_in_config(true)
 	, play_files_from_start(true)
 	, row_spacing(-1) // Default height
@@ -2260,6 +2261,7 @@ void Playlist::saveSettings() {
 	set->setValue( "shuffle", shuffleAct->isChecked() );
 
 	set->setValue( "auto_get_info", automatically_get_info );
+	set->setValue( "remove_after_play", remove_after_play );
 	set->setValue( "recursive_add_directory", recursive_add_directory );
 	set->setValue( "save_playlist_in_config", save_playlist_in_config );
 	set->setValue( "play_files_from_start", play_files_from_start );
@@ -2343,6 +2345,7 @@ void Playlist::loadSettings() {
 	shuffleAct->setChecked( set->value( "shuffle", shuffleAct->isChecked() ).toBool() );
 
 	automatically_get_info = set->value( "auto_get_info", automatically_get_info ).toBool();
+	remove_after_play = set->value( "remove_after_play", remove_after_play ).toBool();
 	recursive_add_directory = set->value( "recursive_add_directory", recursive_add_directory ).toBool();
 	save_playlist_in_config = set->value( "save_playlist_in_config", save_playlist_in_config ).toBool();
 	play_files_from_start = set->value( "play_files_from_start", play_files_from_start ).toBool();
