@@ -112,6 +112,14 @@ bool PrefPlaylist::autoGetInfo() {
 	return getinfo_check->isChecked();
 }
 
+void PrefPlaylist::setFileRemoveAfterPlay(bool b) {
+        remove_after_play_check->setChecked(b);
+}
+
+bool PrefPlaylist::fileRemoveAfterPlay() {
+        return remove_after_play_check->isChecked();
+}
+
 void PrefPlaylist::setSavePlaylistOnExit(bool b) {
 	autosave_on_exit_check->setChecked(b);
 }
@@ -166,14 +174,6 @@ void PrefPlaylist::setFilterCaseSensitive(bool b) {
 
 bool PrefPlaylist::filterCaseSensitive() {
 	return case_sensitive_search_check->isChecked();
-}
-
-void PrefPlaylist::setFileRemoveAfterPlay(bool b) {
-	remove_after_play_check->setChecked(b);
-}
-
-bool PrefPlaylist::fileRemoveAfterPlay() {
-	return remove_after_play_check->isChecked();
 }
 
 #ifdef PLAYLIST_DELETE_FROM_DISK
@@ -231,6 +231,10 @@ void PrefPlaylist::createHelp() {
         "the file is actually played. Beware: this option can be slow, "
         "specially if you add many files."));
 
+        setWhatsThis(remove_after_play_check, tr("Automatic remove files from list after playing"),
+                tr("If this option is checked the title will be removed from the playlist "
+                        "after playing. Note: The file itself remains and will not be deleted."));
+
 	setWhatsThis(dockable_check, tr("The playlist window is dockable"),
 		tr("If this option is checked, the playlist window can be docked inside the main window. "
            "Otherwise the playlist would be a regular window."));
@@ -247,10 +251,6 @@ void PrefPlaylist::createHelp() {
 		tr("If this option is checked, a copy of the playlist will be saved "
            "in the configuration file when SMPlayer is closed, and it will "
            "reloaded automatically when SMPlayer is run again."));
-
-	setWhatsThis(remove_after_play_check, tr("Automatic remove files from list after playing"),
-		tr("If this option is checked the title will be removed from the playlist "
-			"after playing. Note: The file itself remains and will not be deleted."));
 
 #ifdef PLAYLIST_DELETE_FROM_DISK
 	setWhatsThis(allow_delete_files_check, tr("Enable the option to delete files from disk"),
