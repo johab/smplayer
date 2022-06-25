@@ -3199,6 +3199,7 @@ void BaseGui::showPreferencesDialog() {
 	PrefPlaylist * pl = pref_dialog->mod_playlist();
 	pl->setDirectoryRecursion(playlist->directoryRecursion());
 	pl->setAutoGetInfo(playlist->autoGetInfo());
+	pl->setFileRemoveAfterPlay(playlist->removeAfterPlay());
 	pl->setSavePlaylistOnExit(playlist->savePlaylistOnExit());
 	pl->setPlayFilesFromStart(playlist->playFilesFromStart());
 	pl->setPlayOnLoad(playlist->startPlayOnLoad());
@@ -3294,6 +3295,7 @@ void BaseGui::applyNewPreferences() {
 	PrefPlaylist * pl = pref_dialog->mod_playlist();
 	playlist->setDirectoryRecursion(pl->directoryRecursion());
 	playlist->setAutoGetInfo(pl->autoGetInfo());
+	playlist->setRemoveAfterPlay(pl->fileRemoveAfterPlay());
 	playlist->setSavePlaylistOnExit(pl->savePlaylistOnExit());
 	playlist->setPlayFilesFromStart(pl->playFilesFromStart());
 	playlist->setStartPlayOnLoad(pl->playOnLoad());
